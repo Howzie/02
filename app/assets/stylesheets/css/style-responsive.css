@@ -17,16 +17,16 @@
 @media (max-width: 768px) {
 
     .header {
-        position: absolute;
+        position: absolute !important;
     }
 
     /*sidebar*/
 
     #sidebar {
-        height: auto;
+        height: auto !important;
         overflow: hidden;
-        position: absolute;
-        width: 100%;
+        position: absolute !important;
+        width: 100% !important;
         z-index: 1001;
     }
 
@@ -219,7 +219,13 @@
         margin-bottom: 0;
     }
 
+    h3.star-heading {
+        font-size: 18px;
+    }
 
+    a.btn.btn-primary.compare-btn.pull-right {
+        margin-right: 0px !important;
+    }
 
 }
 

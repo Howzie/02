@@ -58,6 +58,8 @@
   resources :dashboards do
     post :import, :on => :collection
     get :upload_inventory, :on => :collection
+    get :about_us, :on => :collection
+    get :faqs, :on => :collection
   end
 
   resources :items

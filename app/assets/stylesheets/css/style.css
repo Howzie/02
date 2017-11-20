@@ -60,7 +60,7 @@ a, a:hover, a:focus {
 
 input:focus, textarea:focus { outline: none; }
 
-table tr th { color: #688a7e;}
+table tr th { color: #233685;}
 
 *:focus {outline: none;}
 
@@ -122,7 +122,7 @@ table tr th { color: #688a7e;}
 
 .lite{
 
-    color: #00a0df !important;
+    color: #ffff66 !important;
 
 }
 
@@ -516,7 +516,7 @@ table tr th { color: #688a7e;}
 
     position: fixed;
 
-    background: #394a59;
+    background: #14142a;
 
 }
 
@@ -716,7 +716,7 @@ ul.sidebar-menu li a{
 
 ul.sidebar-menu li.active a, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
 
-    background: #2e3b46;
+    /*background: #2e3b46;*/
 
     color: #fff;
 
@@ -1171,6 +1171,8 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     background: #00a0df;
 
     font-weight: 400;
+
+    color: black;
 
 }
 
@@ -2078,7 +2080,7 @@ div[data-role="editor-toolbar"] {
 
   background : #1a2732;
 
-  background-color : #1a2732;
+  background-color : #14142a;
 
 }
 
@@ -3926,7 +3928,7 @@ div[data-role="editor-toolbar"] {
 
 .badge.bg-primary {
 
-    background: #688a7e;
+    background: #ffff66;
 
 }
 
@@ -3950,7 +3952,7 @@ div[data-role="editor-toolbar"] {
 
 .badge.bg-important {
 
-    background: #00a0df;
+    background: #ffff66;
 
     font-family: 'Lato', sans-serif;
 

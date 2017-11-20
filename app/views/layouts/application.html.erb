@@ -15,218 +15,22 @@
 
   </head>
   <body>
-
-    <!-- <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <!-- <a class="navbar-brand" href="#">Shop</a> -->
-        <%#= link_to image_tag("logo.png", :class => "img_preview"), "/", class: "navbar-brand logo" %>
-        <!-- <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <%# if user_signed_in? %>
-              <%# if current_user.user_type == true %>
-                <li><%#= link_to "Your Orders", my_orders_orders_path, class: 'merchant-order' %></li>
-                <li><%#= link_to "Upload Inventory", upload_inventory_dashboards_path, class: 'merchant-order' %></li>
-                <li><%#= link_to " (Merchant) #{current_user.name}", edit_user_registration_path, class:"fa fa-user" %></li>
-              <%# else %>
-                <li><%#= link_to 'New Order', orders_path, class: 'new-order', id: 'u-order' %></li>
-                <li><%#= link_to " (Buyer) #{current_user.name}", edit_user_registration_path, class:"fa fa-user" %></li>
-              <%# end %>
-              <li><%#= link_to "  Sign out", destroy_user_session_path, :method => :delete, class:"fa fa-sign-out" %></li>
-            <%# else %>
-              <li id="login"><%#= link_to "  Sign In", new_user_session_path, class:"fa fa-sign-in" %> </li>
-              <li id="logout"><%#= link_to "  Sign up", new_user_registration_path, class:"fa fa-sign-up" %> </li>
-            <%# end %>
-          </ul>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- container section start -->
+  <!-- container section start -->
   <section id="container" class="">
-
-
     <header class="header dark-bg">
       <div class="toggle-nav">
-        <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
+        <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><!-- <i class="icon_menu"></i> --></div>
       </div>
 
       <!--logo start-->
       <%= link_to "/", class: "logo" do %>
-        <span class="lite">Shop</span> India
+        <span class="lite">Howzie</span>
       <% end %>
       <!--logo end-->
-
-      <div class="nav search-row" id="top_menu">
-        <!--  search form start -->
-        <ul class="nav top-menu">
-          <li>
-            <form class="navbar-form">
-              <input class="form-control" placeholder="Search" type="text">
-            </form>
-          </li>
-        </ul>
-        <!--  search form end -->
-      </div>
 
       <div class="top-nav notification-row">
         <!-- notificatoin dropdown start-->
         <ul class="nav pull-right top-menu">
-
-          <!-- task notificatoin start -->
-          <li id="task_notificatoin_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="icon-task-l"></i>
-                            <span class="badge bg-important">6</span>
-                        </a>
-            <ul class="dropdown-menu extended tasks-bar">
-              <div class="notify-arrow notify-arrow-blue"></div>
-              <li>
-                <p class="blue">You have 6 pending letter</p>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="task-info">
-                    <div class="desc">Design PSD </div>
-                    <div class="percent">90%</div>
-                  </div>
-                  <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                      <span class="sr-only">90% Complete (success)</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="task-info">
-                    <div class="desc">
-                      Project 1
-                    </div>
-                    <div class="percent">30%</div>
-                  </div>
-                  <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-                      <span class="sr-only">30% Complete (warning)</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="task-info">
-                    <div class="desc">Digital Marketing</div>
-                    <div class="percent">80%</div>
-                  </div>
-                  <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                      <span class="sr-only">80% Complete</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="task-info">
-                    <div class="desc">Logo Designing</div>
-                    <div class="percent">78%</div>
-                  </div>
-                  <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width: 78%">
-                      <span class="sr-only">78% Complete (danger)</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="task-info">
-                    <div class="desc">Mobile App</div>
-                    <div class="percent">50%</div>
-                  </div>
-                  <div class="progress progress-striped active">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
-                      <span class="sr-only">50% Complete</span>
-                    </div>
-                  </div>
-
-                </a>
-              </li>
-              <li class="external">
-                <a href="#">See All Tasks</a>
-              </li>
-            </ul>
-          </li>
-          <!-- task notificatoin end -->
-          <!-- inbox notificatoin start-->
-          <li id="mail_notificatoin_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="icon-envelope-l"></i>
-                            <span class="badge bg-important">5</span>
-                        </a>
-            <ul class="dropdown-menu extended inbox">
-              <div class="notify-arrow notify-arrow-blue"></div>
-              <li>
-                <p class="blue">You have 5 new messages</p>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="photo"><img alt="avatar" src="./img/avatar-mini.jpg"></span>
-                  <span class="subject">
-                  <span class="from">Greg  Martin</span>
-                  <span class="time">1 min</span>
-                  </span>
-                  <span class="message">
-                      I really like this admin panel.
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="photo"><img alt="avatar" src="./img/avatar-mini2.jpg"></span>
-                  <span class="subject">
-                  <span class="from">Bob   Mckenzie</span>
-                  <span class="time">5 mins</span>
-                  </span>
-                  <span class="message">
-                   Hi, What is next project plan?
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="photo"><img alt="avatar" src="./img/avatar-mini3.jpg"></span>
-                  <span class="subject">
-                  <span class="from">Phillip   Park</span>
-                  <span class="time">2 hrs</span>
-                  </span>
-                  <span class="message">
-                      I am like to buy this Admin Template.
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="photo"><img alt="avatar" src="./img/avatar-mini4.jpg"></span>
-                  <span class="subject">
-                  <span class="from">Ray   Munoz</span>
-                  <span class="time">1 day</span>
-                  </span>
-                  <span class="message">
-                      Icon fonts are great.
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="#">See all messages</a>
-              </li>
-            </ul>
-          </li>
-          <!-- inbox notificatoin end -->
           <!-- alert notification start-->
           <li id="alert_notificatoin_bar" class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -276,9 +80,6 @@
           <% if user_signed_in? %>
             <li class="dropdown">
               <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <span class="profile-ava">
-                    <img alt="" src="assets/avatar1_small.jpg">
-                </span>
                 <span class="username"><%= current_user.name %></span>
                 <b class="caret"></b>
               </a>
@@ -309,42 +110,16 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
-          <li class="active">
-            <%= link_to "/", class: "" do %>
-              <i class="icon_house_alt"></i> Dashboard
+          <li class="about-main">
+            <%= link_to about_us_dashboards_path, class: "about_us main-layout-about-us" do %>
+              About
             <% end %>
           </li>
-          <% if user_signed_in? %>
-            <% if current_user.user_type == true %>
-              <li class="sub-menu">
-                <%= link_to my_orders_orders_path, class: "merchant-order" do %>
-                  <i class="icon_document_alt"></i> Your Orders
-                <% end %>
-              </li>
-              <li class="sub-menu">
-                <%= link_to upload_inventory_dashboards_path, class: "merchant-order" do %>
-                  <i class="icon_documents_alt"></i> Upload Inventory
-                <% end %>
-              </li>
-            <% else %>
-              <li class="sub-menu">
-                <%= link_to orders_path, class: "new-order", id: 'u-order' do %>
-                  <i class="icon_document_alt"></i> New Order
-                <% end %>
-              </li>
+          <li class="faq-main">
+            <%= link_to faqs_dashboards_path, class: "faqs main-layout-faq" do %>
+              Faq
             <% end %>
-            <li class="sub-menu">
-              <%= link_to destroy_user_session_path, :method => :delete do %>
-                <i class="icon_key_alt"></i> Log out
-              <% end %>
-            </li>
-          <% else %>
-            <li class="sub-menu">
-              <%= link_to new_user_session_path do %>
-                <i class="icon_document_alt"></i> Log in
-              <% end %>
-            </li>
-          <% end %>
+          </li>
         </ul>
         <!-- sidebar menu end-->
       </div>
@@ -355,26 +130,40 @@
     <section id="main-content">
       <section class="wrapper">
         <!--overview start-->
-        <div class="row">
-          <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
-            <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-              <li><i class="fa fa-laptop"></i>Dashboard</li>
-            </ol>
+        <% if user_signed_in? %>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 breadcrumb-main">
+                <ol class="breadcrumb">
+                  <li>
+                    <% if current_user.user_type == true %>
+                      <p class="breadcrumb-name">Merchant id: <span class="customer-id"><%= current_user.id %></span></p>
+                    <% else %>
+                      <p class="breadcrumb-name">Customer id: <span class="customer-id"><%= current_user.id %></span></p>
+                    <% end %>
+                  </li>
+                  <% if current_user.user_type == true %>
+                    <%= link_to "Your Orders", my_orders_orders_path, class: 'btn btn-primary new-order pull-right' %>
+                    <%= link_to "Upload Inventory", upload_inventory_dashboards_path, class: 'btn btn-primary new-order pull-right merchant-action' %>
+                  <% else %>
+                    <%= link_to 'New Order', orders_path, class: 'btn btn-primary new-order pull-right' %>
+                  <% end %>
+                </ol>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12">
-            <%= bootstrap_flash %>
-            <%= yield %>
+          <% end %>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <%= bootstrap_flash %>
+              </div>
+            </div>
           </div>
-        </div>
+          <%= yield %>
       </section>
     </section>
   </section>
-  <!-- container section start -->
 
   <!-- javascripts -->
   <!-- <script src="assets/js/jquery.js"></script>
@@ -382,7 +171,7 @@
   <script src="assets/js/jquery-1.8.3.min.js"></script>
   <script type="text/javascript" src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
   <!-- bootstrap -->
-  <!-- <script src="assets/js/bootstrap.min.js"></script> -->
+  <!-- <script src="/assets/bootstrap.min.js"></script> -->
   
   <!--custome script for all page-->
   <script src="/assets/scripts.js"></script>

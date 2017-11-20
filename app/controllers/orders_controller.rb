@@ -18,18 +18,18 @@ class OrdersController < ApplicationController
 		id = params[:id]
 		m = id.match /(.+)-(\d+)/
 		item = Item.find(m[1]).code
-
+		
 		session[:items_id] << params[:id]
-
+		# puts session[:items_id].inspect
 		session[:items_id].each do |a|
 			inner_id = a.match /(.+)-(\d+)/
 			b = Item.find(inner_id[1]).code
 
-			if item == b and session[:items_id].size > 2
+			if item == b and session[:items_id].size > session[:count]
 				session[:items_id].delete_if{|i|i == a}
 			end
 		end
-
+		# puts session[:items_id].inspect
 		render :nothing => true
 	end
 
@@ -41,7 +41,6 @@ class OrdersController < ApplicationController
 			@b << id[1]
 			@c << id[2]
 		end
-		# abort @b.inspect
 		@items = Item.where("id IN (?)", @b)
 		# abort @items.inspect
 	end
@@ -87,13 +86,16 @@ class OrdersController < ApplicationController
 
 	def make_order
 		@delivery_address = session[:delivery_add]
-		if params[:is_confirm]
+		if session[:items_id].present?
+			session[:recent_orders] = []
 			session[:items_id].each do |a|
 				id = a.match /(.+)-(\d+)/
 				item = Item.find(id[1])
 
 				delivery_date =  Date.today + item.delivery_days
-				order = Order.create!(user_id: current_user.id, merchant_id: item.user_id, item_id: item.id, item_qty: id[2], delivery_add: session[:delivery_add], postal_code: session[:postal_code], delivery_date: delivery_date, is_confirm: params[:is_confirm]  )
+				order = Order.create!(user_id: current_user.id, merchant_id: item.user_id, item_id: item.id, item_qty: id[2], delivery_add: session[:delivery_add], postal_code: session[:postal_code], delivery_date: delivery_date, is_confirm: true )
+
+				session[:recent_orders] << order.id
 
 				@stock = item.update_attributes(stock: item.stock.to_i - id[2].to_i)
 
@@ -102,10 +104,12 @@ class OrdersController < ApplicationController
 			session.delete(:postal_code)
 			session.delete(:delivery_add)
 			session.delete(:delivery_date)
-			@my_orders = Order.where("is_delivered = ?", false)
+			session.delete(:count)
+			# @my_orders = Order.where("is_delivered = ?", false)
+			@my_orders = Order.where("id IN (?)", session[:recent_orders])
 			flash[:message] = "Order placed successfully!"		
 		else
-			@my_orders = Order.where("is_delivered = ?", false)
+			@my_orders = Order.where("id IN (?)", session[:recent_orders])
 		end
 	end
 

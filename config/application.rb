@@ -23,5 +23,12 @@ module Shop
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.to_prepare do
+        Devise::SessionsController.layout "auth"
+        Devise::RegistrationsController.layout "auth"
+        # Devise::ConfirmationsController.layout "your_layout_name"
+        # Devise::UnlocksController.layout "your_layout_name"
+        # Devise::PasswordsController.layout "your_layout_name"
+    end
   end
 end

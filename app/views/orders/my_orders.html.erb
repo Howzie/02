@@ -1,8 +1,14 @@
 <div class="container">
 	<div class="row">
+	    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h3 class="star-heading">
+				My Orders
+			</h3>
+	    </div>
+    </div>
+	<div class="row">
 		<div class="col-lg-12">
 			<div class="user-orders">
-				<h2 class="main-heading">My Orders</h2>
 				<% if @my_orders.blank? %>
 					<p class="no-slug">You have no orders.</p>
 				<% else %>
@@ -54,3 +60,8 @@
 		</div>
 	</div>
 </div>
+<style type="text/css">
+	a.btn.btn-primary.new-order{
+		display: none;
+	}
+</style>

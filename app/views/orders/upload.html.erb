@@ -1,15 +1,20 @@
 <div class="container">
     <div class="row">
-        <h2 class="main-heading">Searched Inventories</h2>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 compare-order">
+          <h3 class="star-heading">
+            Compare and order
+          </h3>
+        </div>
+    </div>
+    <div class="row">
         <div class="table-responsive">
-            <table class="table table-hover">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>Item Code</th>
                         <th>Item Name</th>
                         <th>Item Specification</th>
                         <th>Item Price</th>
-                        <th>Qty</th>
                         <th>Item Delivery Date</th>
                         <th>Select</th>
                     </tr>
@@ -17,41 +22,39 @@
 
                 <tbody>
                         <% i = 0 %>
+                        <% @count = 0 %>
                         <% @short_items.each do |h| %>
-                        <% h.each do |s| %>
-                            <tr id="element" class="item_<%= s.id %>">
-                                <td><%= s.code %></td>
-                                <td><%= s.name %></td>
-                                <td><%= s.specification %></td>
-                                <td>INR <%= s.price %></td>
-                                <td><%= @qty[i] %></td>
-                                <td><%= @start_date + s.delivery_days %></td>
-                                <td>
-                                    <label><input type="radio" class="user_item" id="item_<%= s.id %>" name="<%= s.code %>" data-id="<%= s.id %>-<%= @qty[i]%>" data-val="<%= @qty[i] %>"></label>
-                                </td>
-                            </tr>
+                            <% h.each do |s| %>
+                                <tr id="element" class="item_<%= s.id %>">
+                                    <td><%= s.code %></td>
+                                    <td><%= s.name %></td>
+                                    <td><%= s.specification %></td>
+                                    <td>INR <%= s.price %></td>
+                                    <td><%= @start_date + s.delivery_days %></td>
+                                    <td>
+                                        <label><input type="radio" class="user_item" id="item_<%= s.id %>" name="<%= s.code %>" data-id="<%= s.id %>-<%= @qty[i]%>" data-val="<%= @qty[i] %>"></label>
+                                    </td>
+                                </tr>
+                            <% end %>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr></tr>
+                                <% @count += 1 %>
+                                <% i += 1 %>
                         <% end %>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr></tr>
-                        <% i += 1 %>
-                    <% end %>
+                        <% session[:count] = @count %>
                 </tbody>
-                <div id="result"></div>
             </table>
         </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-12 nxt-btn">
-        <%= link_to "Next", show_order_orders_path, class: 'btn btn-primary'%>
-    </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <%= link_to "Next", show_order_orders_path, class: 'btn btn-primary compare-btn pull-right'%>
+        </div>
   </div>
 </div>
 
@@ -72,7 +75,7 @@
             $('.'+ ddclass).css('background-color', 'white');
             $('.'+ ppclass).css('background-color', 'white');
             var a = $(this).attr("id");
-            $('.'+ a).css('background-color', 'azure');
+            $('.'+ a).css('background-color', 'rgb(200, 225, 255)');
             var item_id = $(this).attr("data-id");
             $.ajax({
                 type: "get",
@@ -87,5 +90,13 @@
 <style type="text/css">
     a#u-order{
         display: none;
+    }
+
+    a.btn.btn-primary.new-order.pull-right {
+        display: none;
+    }
+
+    .col-lg-12.breadcrumb-main {
+        padding: 0px;
     }
 </style>
